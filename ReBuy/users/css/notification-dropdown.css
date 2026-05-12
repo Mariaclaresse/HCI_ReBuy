@@ -1,0 +1,242 @@
+/* Notification Dropdown Styles */
+.notification-dropdown {
+    position: relative;
+}
+
+.notification-count {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background: #dc3545;
+    color: white;
+    border-radius: 50%;
+    width: 18px;
+    height: 18px;
+    font-size: 11px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid white;
+    z-index: 10;
+}
+
+.notification-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 350px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+    display: none;
+    border: 1px solid #e0e0e0;
+    margin-top: 10px;
+}
+
+/* Ensure dropdown stays visible when moving mouse to it */
+.notification-dropdown {
+    position: relative;
+}
+
+.notification-dropdown:hover .notification-menu {
+    display: block;
+}
+
+.notification-menu.show {
+    display: block;
+    animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.notification-menu .notification-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    border-bottom: 1px solid #f0f0f0;
+    background: #f8f9fa;
+    border-radius: 8px 8px 0 0;
+}
+
+.notification-menu .notification-header h4 {
+    margin: 0;
+    font-size: 16px;
+    color: #333;
+    font-weight: 600;
+}
+
+.notification-menu .view-all {
+    color: #007bff;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.notification-menu .view-all:hover {
+    text-decoration: underline;
+}
+
+.notification-list-dropdown {
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.notification-item-dropdown {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 15px 20px;
+    border-bottom: 1px solid #f0f0f0;
+    transition: background 0.2s ease;
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+}
+
+.notification-item-dropdown.clickable {
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+}
+
+.notification-item-dropdown.clickable:hover {
+    background: linear-gradient(135deg, #e3f2fd 0%, #f3f8ff 100%);
+    transform: translateX(3px);
+    box-shadow: 0 2px 8px rgba(0, 123, 255, 0.1);
+}
+
+.notification-item-dropdown:hover {
+    background: #f8f9fa;
+}
+
+.notification-item-dropdown.unread {
+    background: #e8f5e8;
+    border-left: 3px solid #28a745;
+}
+
+.notification-item-dropdown:last-child {
+    border-bottom: none;
+}
+
+.notif-icon {
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f0f0f0;
+    border-radius: 50%;
+}
+
+.notif-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.notif-content h5 {
+    margin: 0 0 4px 0;
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+    line-height: 1.3;
+}
+
+.notif-content p {
+    margin: 0 0 6px 0;
+    font-size: 13px;
+    color: #666;
+    line-height: 1.4;
+    /* Fallback for browsers that don't support line-clamp */
+    display: -webkit-box;
+    display: -moz-box;
+    display: box;
+    -webkit-line-clamp: 2;
+    -moz-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    -moz-box-orient: vertical;
+    box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    /* Additional fallback for older browsers */
+    max-height: 2.8em; /* 2 lines * 1.4 line-height */
+}
+
+.notif-time {
+    font-size: 11px;
+    color: #999;
+    font-style: italic;
+}
+
+.no-notifications {
+    text-align: center;
+    padding: 30px 20px;
+    color: #999;
+}
+
+.no-notifications i {
+    font-size: 32px;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.no-notifications p {
+    margin: 0;
+    font-size: 14px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .notification-menu {
+        width: 300px;
+        right: -50px;
+    }
+}
+
+@media (max-width: 480px) {
+    .notification-menu {
+        width: 280px;
+        right: -80px;
+    }
+    
+    .notification-item-dropdown {
+        padding: 12px 15px;
+    }
+    
+    .notif-content h5 {
+        font-size: 13px;
+    }
+    
+    .notif-content p {
+        font-size: 12px;
+    }
+}
+
+/* Scrollbar styling */
+.notification-list-dropdown::-webkit-scrollbar {
+    width: 6px;
+}
+
+.notification-list-dropdown::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.notification-list-dropdown::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 3px;
+}
+
+.notification-list-dropdown::-webkit-scrollbar-thumb:hover {
+    background: #a8a8a8;
+}

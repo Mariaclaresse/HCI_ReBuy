@@ -1,0 +1,252 @@
+/* Shopping Cart Page Styles */
+
+.cart-section {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 40px;
+}
+
+.cart-section h1 {
+    font-size: 32px;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.cart-container {
+    display: grid;
+    grid-template-columns: 1fr 350px;
+    gap: 30px;
+}
+
+.cart-items {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.cart-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.cart-table thead {
+    background: #2d5016;
+}
+
+.cart-table th {
+    padding: 15px;
+    text-align: left;
+    font-weight: 600;
+    color: white;
+    font-size: 13px;
+}
+
+.cart-table td {
+    padding: 20px 15px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.product-name {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.product-name img {
+    width: 60px;
+    height: 60px;
+    border-radius: 4px;
+    object-fit: cover;
+}
+
+.product-name a {
+    color: #2d5016;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.product-name a:hover {
+    text-decoration: underline;
+}
+
+.qty-controls {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+
+.qty-btn {
+    width: 32px;
+    height: 32px;
+    border: 1px solid #e0e0e0;
+    background: white;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+.qty-btn:hover {
+    background: #f5f5f5;
+}
+
+.qty-input {
+    width: 50px;
+    text-align: center;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    padding: 5px;
+    font-size: 13px;
+}
+
+.btn-remove {
+    color: #e74c3c;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.btn-remove:hover {
+    color: #c0392b;
+}
+
+.cart-summary {
+    background: white;
+    border-radius: 8px;
+    padding: 25px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    height: fit-content;
+}
+
+.cart-summary h3 {
+    margin: 0 0 20px;
+    font-size: 16px;
+    color: #333;
+    font-weight: 600;
+}
+
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    font-size: 13px;
+    color: #666;
+}
+
+.summary-row.total {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    border-top: 2px solid #f0f0f0;
+    padding-top: 15px;
+    margin-top: 15px;
+}
+
+.btn-checkout,
+.btn-continue-shopping {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 15px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s;
+}
+
+.btn-checkout {
+    background: #2d5016;
+    color: white;
+}
+
+.btn-checkout:hover {
+    background: #1a3009;
+}
+
+.btn-continue-shopping {
+    background: #f5f5f5;
+    color: #333;
+    border: 1px solid #e0e0e0;
+}
+
+.btn-continue-shopping:hover {
+    background: #e8e8e8;
+}
+
+.empty-cart {
+    text-align: center;
+    padding: 80px 40px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.empty-cart i {
+    font-size: 80px;
+    color: #ccc;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.empty-cart h2 {
+    margin: 0 0 10px;
+    color: #333;
+    font-size: 24px;
+}
+
+.empty-cart p {
+    margin: 0 0 30px;
+    color: #666;
+    font-size: 14px;
+}
+
+.empty-cart .btn-primary {
+    display: inline-block;
+    padding: 12px 30px;
+    background: #2d5016;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: 600;
+}
+
+.empty-cart .btn-primary:hover {
+    background: #1a3009;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .cart-container {
+        grid-template-columns: 1fr;
+    }
+
+    .cart-table {
+        font-size: 12px;
+    }
+
+    .cart-table th,
+    .cart-table td {
+        padding: 10px;
+    }
+
+    .product-name {
+        gap: 10px;
+    }
+
+    .product-name img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .cart-section {
+        padding: 20px;
+    }
+}
